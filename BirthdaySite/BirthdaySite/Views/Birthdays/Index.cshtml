@@ -1,0 +1,28 @@
+﻿@model ICollection<BirthdaySite.ViewModels.Friends.FriendViewModel>
+
+<div>
+    <h2>Friends</h2>
+    <ul class="user-profiles-list-basic">
+        @foreach (var friend in Model)
+        {
+            <li style="background-color: hsl(60, 100%, 85%)">
+                <a href="#" class="user-avatar">
+                    @friend.Name
+                </a>
+                <p>
+                    @if (friend.Gender)
+                    {
+                        <a href="">Male</a>
+                    }
+                    else
+                    {
+                        <a href="">Female</a>
+                    }       
+                    <span>Birthday <i>@friend.Birthday</i></span>
+                </p>
+                <a class="delete" href="#"><i class="fa fa-close"></i></a>
+            </li>
+        }
+    </ul>
+
+</div>

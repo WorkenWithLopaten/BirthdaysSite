@@ -146,6 +146,7 @@
     <Compile Include="ServiceTests\GroupServiceTests\GetAllTests.cs" />
     <Compile Include="ServiceTests\UserServiceTests\ConstructorTests.cs" />
     <Compile Include="ServiceTests\UserServiceTests\GetAllTests.cs" />
+    <Compile Include="SignalRTests\Constructor_Should.cs" />
     <Compile Include="SignalRTests\Helpers\TestableChatHub.cs" />
   </ItemGroup>
   <ItemGroup>

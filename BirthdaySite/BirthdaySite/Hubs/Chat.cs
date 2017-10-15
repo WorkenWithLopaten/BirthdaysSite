@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using Bytes2you.Validation;
+using Microsoft.AspNet.SignalR;
 using MVCTemplate.Services.Data;
 
 namespace SignalRChat.Hubs
@@ -9,6 +10,8 @@ namespace SignalRChat.Hubs
 
         public Chat(IGroupService groups)
         {
+            Guard.WhenArgument(groups, "groupService").IsNull().Throw();
+
             this.groups = groups;
         }
 

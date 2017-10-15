@@ -1,10 +1,10 @@
 ﻿using BirthdaySite.Data.Models;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace MVCTemplate.Services.Data
 {
     public interface IUserService
     {
-        IQueryable<ApplicationUser> GetAll();
+        ICollection<ApplicationUser> GetAll();
     }
 }

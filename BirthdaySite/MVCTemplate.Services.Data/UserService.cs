@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using BirthdaySite.Data.Models;
 using MVCTemplate.Data.Common.Repositories;
+using System.Collections.Generic;
+using Bytes2you.Validation;
 
 namespace MVCTemplate.Services.Data
 {
@@ -10,12 +12,14 @@ namespace MVCTemplate.Services.Data
 
         public UserService(IUserRepository<ApplicationUser> users)
         {
+            Guard.WhenArgument(users, "userService").IsNull().Throw();
+
             this.users = users;
         }
 
-        public IQueryable<ApplicationUser> GetAll()
+        public ICollection<ApplicationUser> GetAll()
         {
-            return this.users.All();
+            return this.users.All().ToList();
         }
     }
 }

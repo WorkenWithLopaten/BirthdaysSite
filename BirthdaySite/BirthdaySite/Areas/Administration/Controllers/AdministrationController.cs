@@ -50,7 +50,7 @@ namespace BirthdaySite.Areas.Administration.Controllers
 
             var adminViewModel = new AdminDataInitalViewModel();
 
-            adminViewModel.FriendListsCount = friendsCount;
+            adminViewModel.FriendListsCount = friendListsCount;
             adminViewModel.GroupsCount = groupsCount;
             adminViewModel.MessagesCount = messagesCount;
             adminViewModel.UsersCount = usersCount;
@@ -63,16 +63,16 @@ namespace BirthdaySite.Areas.Administration.Controllers
         public ActionResult GetAllGroupsAndMessages()
         {
             var groups = this.groups.GetAll()
-                .Select(x => new GroupViewModel()
-                {
-                    Name = x.Name,
-                    Messages = x.Messages.Select(y => new MessageViewModel()
-                    {
-                        Author = y.Author,
-                        Content = y.Content
-                    }).ToList()
+               .Select(x => new GroupViewModel()
+               {
+                   Name = x.Name,
+                   Messages = x.Messages.Select(y => new MessageViewModel()
+                   {
+                       Author = y.Author,
+                       Content = y.Content
+                   }).ToList()
 
-                })
+               })
                 .ToList();
 
             return View(groups);

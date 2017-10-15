@@ -4,6 +4,7 @@ using MVCTemplate.Data.Models;
 using MVCTemplate.Data.Common;
 using MVCTemplate.Data.Common.SaveContext;
 using System.Collections.Generic;
+using Bytes2you.Validation;
 
 namespace MVCTemplate.Services.Data
 {
@@ -14,6 +15,9 @@ namespace MVCTemplate.Services.Data
 
         public GroupService(IDbRepository<Group> groups, ISaveContext saveContext)
         {
+            Guard.WhenArgument(groups, "groupService").IsNull().Throw();
+            Guard.WhenArgument(saveContext, "groupService").IsNull().Throw();
+
             this.groups = groups;
             this.saveContext = saveContext;
         }
@@ -28,15 +32,18 @@ namespace MVCTemplate.Services.Data
             var group = this.groups.All()
                 .SingleOrDefault(g => g.Name == groupName && !g.IsDeleted);
 
-            var message = new Message(messageAuthor, messageContent);
+            if (group != null)
+            {
+                var message = new Message(messageAuthor, messageContent);
 
-            message.CreatedOn = DateTime.Now;
-            message.Group = group;
-            message.GroupId = group.Id;
+                message.CreatedOn = DateTime.Now;
+                message.Group = group;
+                message.GroupId = group.Id;
 
-            group.Messages.Add(message);
+                group.Messages.Add(message);
 
-            saveContext.Commit();
+                saveContext.Commit();
+            }
         }
     }
 }

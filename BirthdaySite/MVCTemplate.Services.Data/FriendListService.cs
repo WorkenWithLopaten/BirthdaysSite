@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MVCTemplate.Data.Models;
 using MVCTemplate.Data.Common;
 using System.Linq;
+using Bytes2you.Validation;
 
 namespace MVCTemplate.Services.Data
 {
@@ -12,6 +13,8 @@ namespace MVCTemplate.Services.Data
 
         public FriendListService(IDbRepository<FriendsList> friends)
         {
+            Guard.WhenArgument(friends, "friendService").IsNull().Throw();
+
             this.friends = friends;
         }
 

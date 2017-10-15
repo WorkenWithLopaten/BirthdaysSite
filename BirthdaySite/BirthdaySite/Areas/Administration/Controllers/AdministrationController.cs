@@ -2,6 +2,7 @@
 using BirthdaySite.ViewModels.AdminViewModel;
 using BirthdaySite.ViewModels.Forum;
 using BirthdaySite.ViewModels.Friends;
+using Bytes2you.Validation;
 using MVCTemplate.Services.Data;
 using System.Linq;
 using System.Web.Mvc;
@@ -12,14 +13,18 @@ namespace BirthdaySite.Areas.Administration.Controllers
     {
         private IGroupService groups;
         private IFriendListService friendLists;
-        private ApplicationDbContext context;
+        private IUserService users;
 
         public AdministrationController(IGroupService groups, IFriendListService friendLists,
-            ApplicationDbContext context)
+            IUserService users)
         {
+            Guard.WhenArgument(groups, "Group service cannot be null!").IsNull().Throw();
+            Guard.WhenArgument(friendLists, "FriendsLists service cannot be null!").IsNull().Throw();
+            Guard.WhenArgument(users, "Users service cannot be null!").IsNull().Throw();
+
             this.groups = groups;
             this.friendLists = friendLists;
-            this.context = context;
+            this.users = users;
         }
 
         [Authorize]
@@ -27,7 +32,7 @@ namespace BirthdaySite.Areas.Administration.Controllers
         {
             var groups = this.groups.GetAll().ToList();
             var groupsCount = groups.Count;
-            var usersCount = this.context.Users.Count();
+            var usersCount = this.users.GetAll().Count();
             var friendLists = this.friendLists.GetAll();
             var friendListsCount = friendLists.Count;
             var friendsCount = 0;
@@ -96,7 +101,7 @@ namespace BirthdaySite.Areas.Administration.Controllers
         [Authorize]
         public ActionResult GetAllUsers()
         {
-            var users = this.context.Users
+            var users = this.users.GetAll()
                 .Select(u => new LoginViewModel()
                 {
                     Email = u.Email,

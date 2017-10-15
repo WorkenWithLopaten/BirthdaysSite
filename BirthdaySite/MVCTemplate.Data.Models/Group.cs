@@ -16,7 +16,7 @@ namespace MVCTemplate.Data.Models
             this.Messages = new List<Message>();
         }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         public virtual ICollection<Message> Messages { get; set; }
     }

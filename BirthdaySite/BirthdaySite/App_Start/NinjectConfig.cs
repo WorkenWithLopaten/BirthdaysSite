@@ -17,6 +17,8 @@ namespace BirthdaySite.App_Start
     using MVCTemplate.Services.Data;
     using Microsoft.AspNet.SignalR;
     using BirthdaySite.App_Start.Helpers;
+    using System.Security.Principal;
+    using MVCTemplate.Data.Common.Repositories;
 
     public static class NinjectConfig
     {
@@ -74,6 +76,9 @@ namespace BirthdaySite.App_Start
             kernel.Bind<ISaveContext>().To<SaveContext>().InRequestScope();
             kernel.Bind<IGroupService>().To<GroupService>().InRequestScope();
             kernel.Bind<IFriendListService>().To<FriendListService>().InRequestScope();
+            kernel.Bind<IPrincipal>().ToMethod(context => HttpContext.Current.User).InRequestScope();
+            kernel.Bind<IUserService>().To<UserService>().InRequestScope();
+            kernel.Bind(typeof(IUserRepository<>)).To(typeof(UserRepository<>)).InRequestScope();
         }
     }
 }

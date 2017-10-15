@@ -3,6 +3,7 @@ using System.Linq;
 using MVCTemplate.Data.Models;
 using MVCTemplate.Data.Common;
 using MVCTemplate.Data.Common.SaveContext;
+using System.Collections.Generic;
 
 namespace MVCTemplate.Services.Data
 {
@@ -17,9 +18,9 @@ namespace MVCTemplate.Services.Data
             this.saveContext = saveContext;
         }
 
-        public IQueryable<Group> GetAll()
+        public ICollection<Group> GetAll()
         {
-            return this.groups.All().Where(m => !m.IsDeleted);
+            return this.groups.All().Where(m => !m.IsDeleted).ToList();
         }
 
         public void AddMessageToGroup(string groupName, string messageAuthor, string messageContent)

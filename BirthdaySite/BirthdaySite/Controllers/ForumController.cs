@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using BirthdaySite.ViewModels.Forum;
 using MVCTemplate.Services.Data;
+using Bytes2you.Validation;
 
 namespace BirthdaySite.Controllers
 {
@@ -11,6 +12,8 @@ namespace BirthdaySite.Controllers
 
         public ForumController(IGroupService groups)
         {
+            Guard.WhenArgument(groups, "groupsService").IsNull().Throw();
+
             this.groups = groups;
         }
 
@@ -29,7 +32,6 @@ namespace BirthdaySite.Controllers
 
                 })
                 .ToList();
-
 
             return View(groups);
         }

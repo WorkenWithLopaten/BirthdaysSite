@@ -1,11 +1,11 @@
 ﻿using MVCTemplate.Data.Models;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace MVCTemplate.Services.Data
 {
     public interface IGroupService
     {
-        IQueryable<Group> GetAll();
+        ICollection<Group> GetAll();
 
         void AddMessageToGroup(string groupName, string messageAuthor, string messageContent);
     }

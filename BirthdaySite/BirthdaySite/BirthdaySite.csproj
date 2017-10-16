@@ -268,6 +268,10 @@
     <Content Include="Areas\Administration\Views\Administration\GetallGroupsAndMessages.cshtml" />
     <Content Include="Areas\Administration\Views\Administration\GetAllUsers.cshtml" />
     <Content Include="Areas\Administration\Views\Administration\GetAllFriendListsAndFriends.cshtml" />
+    <None Include="Properties\PublishProfiles\BirthdaySite - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\BirthdaySite - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\BirthdaySite - Web Deploy123.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\customSignalR.js" />

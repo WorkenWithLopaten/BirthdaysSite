@@ -52,7 +52,7 @@ Site for birthdays
 
 <p>Administration Part:</p>
 <ul>
-<li>Manage groups and messages page</li
+<li>Manage groups and messages page</li>
 <li>Manage friends and friendlists page</li>
 <li>Manage users page</li>
 </ul>

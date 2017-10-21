@@ -6,44 +6,60 @@ Site for birthdays
 
 <p>Live demo of the <a href="http://birthdaysite.azurewebsites.net/">Birthday site</a>
 
-How it works
+<h3>How it works</h3>
 
-Register
-Go to Restaurant
-Enter the restaurant name
-Enter the restaurant's number of tables
-Click Create
-Click place customers on a certain table number
-Click on customer's chosen products (You will see a table below with the chosen products)
-When the customer wants the bill, just click on Checkout button and you will see the final bill amount
-Now you can see a message that the order is finished and now the table is free
-Click on the link The Order is finished. The table is free. Go to restaurant menu
-This application is based on ASP.NET MVC 5
+<ul>
+<li>Register</li>
+<li>Login</li>
+<li>Check your profile and edit your profile</li>
+<li>Check your friends upcoming birthdays</li>
+<li>Join group and get idea about presents and other birthday stuff!</li>
+<li>Check for presents on site(upcoming)</li>
+<li>If you are admin you can use sites administration</li>
+<li>Admin can edit everything on the site exept others names</li>
+</ul>
 
-MVC 5
-SQL Server
-JQuery
-Bootstrap
-Main functionalities
+<p>This application is based on ASP.NET MVC 5</p>
 
-Public Part:
+<ul>
+<li>MVC 5</li>
+<li>Sql Server</li>
+<li>JQuery</li>
+<li>Bootstrap</li>
+<li>XML</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>SignalRJs and etc.</li>
+</ul>
 
-Home page
-How it works page
-Contact page
-Login page
-Register page
-Private Part:
+<h2>Main functionalities</h2>
 
-Restaurant page
-Restaurant products page
-Finished order page
-Administration Part:
+<p>Public Part:</p>
+<ul>
+<li>Home page</li>
+<li>Presents page</li>
+<li>Login page</li>
+<li>Register page</li>
+</ul>
 
-Manage registered restaurants page
-Author
+<p>Private Part:</p>
+<ul>
+<li>Forum page</li>
+<li>Admin page</li>
+<li>Birthdays page</li>
+<li>Profile page</li>
+</ul>
 
-Marian Nikolov (https://github.com/MarianNikolov)
-License
+<p>Administration Part:</p>
+<ul>
+<li>Manage groups and messages page</li
+<li>Manage friends and friendlists page</li>
+<li>Manage users page</li>
+</ul>
 
-This project is licensed under the MIT License
+<h2>Author</h2>
+
+<li>Marian Nikolov (https://github.com/WorkenWithLopaten/BirthdaysSite)</li>
+<h2>License</h2>
+
+<p>This project is licensed under the MIT License</p>

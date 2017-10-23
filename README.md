@@ -59,7 +59,7 @@ Site for birthdays
 
 <h2>Author</h2>
 
-<li>Marian Nikolov (https://github.com/WorkenWithLopaten/BirthdaysSite)</li>
+<li>Iliya Stambolov (https://github.com/WorkenWithLopaten/BirthdaysSite)</li>
 <h2>License</h2>
 
 <p>This project is licensed under the MIT License</p>

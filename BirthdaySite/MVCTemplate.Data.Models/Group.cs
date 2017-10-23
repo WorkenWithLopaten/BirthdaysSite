@@ -1,5 +1,6 @@
 ﻿using MVCTemplate.Data.Common.Models;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCTemplate.Data.Models
 {
@@ -16,6 +17,10 @@ namespace MVCTemplate.Data.Models
             this.Messages = new List<Message>();
         }
 
+        //[Required]
+        //[Display(Name = "GroupName")]
+        //[DataType(DataType.Text)]
+        //[StringLength(20)]
         public string Name { get; set; }
 
         public virtual ICollection<Message> Messages { get; set; }

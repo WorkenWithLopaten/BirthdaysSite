@@ -2,10 +2,8 @@
 using MVCTemplate.Services.Data;
 using BirthdaySite.Areas.Administration.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 using System.Collections.Generic;
 using MVCTemplate.Data.Models;
-using BirthdaySite.Data.Models;
 using BirthdaySite.ViewModels.AdminViewModel;
 using TestStack.FluentMVCTesting;
 
@@ -64,13 +62,13 @@ namespace BirthdaySite.UnitTests.Controller.Tests
                 });
 
             userServiceMocked.Setup(m => m.GetAll())
-                .Returns(new List<ApplicationUser>()
+                .Returns(new List<User>()
                 {
-                    new ApplicationUser()
+                    new User()
                     {
 
                     },
-                    new ApplicationUser()
+                    new User()
                     {
 
                     }
@@ -134,13 +132,13 @@ namespace BirthdaySite.UnitTests.Controller.Tests
                 });
 
             userServiceMocked.Setup(m => m.GetAll())
-                .Returns(new List<ApplicationUser>()
+                .Returns(new List<User>()
                 {
-                    new ApplicationUser()
+                    new User()
                     {
 
                     },
-                    new ApplicationUser()
+                    new User()
                     {
 
                     }
@@ -204,13 +202,13 @@ namespace BirthdaySite.UnitTests.Controller.Tests
                 });
 
             userServiceMocked.Setup(m => m.GetAll())
-                .Returns(new List<ApplicationUser>()
+                .Returns(new List<User>()
                 {
-                    new ApplicationUser()
+                    new User()
                     {
 
                     },
-                    new ApplicationUser()
+                    new User()
                     {
 
                     }
@@ -274,13 +272,13 @@ namespace BirthdaySite.UnitTests.Controller.Tests
                 });
 
             userServiceMocked.Setup(m => m.GetAll())
-                .Returns(new List<ApplicationUser>()
+                .Returns(new List<User>()
                 {
-                    new ApplicationUser()
+                    new User()
                     {
 
                     },
-                    new ApplicationUser()
+                    new User()
                     {
 
                     }

@@ -1,6 +1,5 @@
 namespace MVCTemplate.Data.Migrations
 {
-    using BirthdaySite.Data.Models;
     using BirthdaySite.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
@@ -30,14 +29,13 @@ namespace MVCTemplate.Data.Migrations
                 var role = new IdentityRole { Name = "Admin" };
                 roleManager.Create(role);
 
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
-                var user = new ApplicationUser
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User
                 {
                     UserName = "eventsadmin@telerikacademy.com",
                     Email = "eventsadmin@telerikacademy.com",
-                    EmailConfirmed = true,
-
+                    EmailConfirmed = true,                   
                 };
 
                 userManager.Create(user, "123456");

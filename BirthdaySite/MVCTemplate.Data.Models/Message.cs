@@ -1,4 +1,5 @@
 ﻿using MVCTemplate.Data.Common.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCTemplate.Data.Models
 {
@@ -19,8 +20,16 @@ namespace MVCTemplate.Data.Models
 
         public virtual Group Group { get; set; }
 
+        //[Required]
+        //[Display(Name = "Author")]
+        //[DataType(DataType.Text)]
+        //[StringLength(10)]
         public string Author { get; set; }
 
+        //[Required]
+        //[Display(Name = "Content")]
+        //[DataType(DataType.Text)]
+        //[StringLength(30)]
         public string Content { get; set; }
     }
 }

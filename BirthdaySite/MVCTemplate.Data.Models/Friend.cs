@@ -16,12 +16,20 @@ namespace MVCTemplate.Data.Models
             this.Gender = gender;
         }
 
+        //[Required]
+        //[Display(Name = "FriendName")]
+        //[DataType(DataType.Text)]
+        //[StringLength(20)]
         public string Name { get; set; }     
                   
         public int FriendListId { get; set; }
 
         public virtual FriendsList FriendList { get; set; }
 
+        //[Required]
+        //[Display(Name = "Birthday")]
+        //[DataType(DataType.DateTime)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
 
         public int Age { get; set; }

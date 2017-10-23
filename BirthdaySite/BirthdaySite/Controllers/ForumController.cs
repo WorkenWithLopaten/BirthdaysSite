@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using BirthdaySite.ViewModels.Forum;
 using MVCTemplate.Services.Data;
 using Bytes2you.Validation;
+using BirthdaySite.Common;
 
 namespace BirthdaySite.Controllers
 {
@@ -55,12 +56,26 @@ namespace BirthdaySite.Controllers
 
             return View("_MessagesPartial", group);
         }
-
-        //TODO: Add Functionality!
+     
         [Authorize]
-        public ActionResult AddGroup()
+        [OutputCache(Duration = 30, VaryByParam = "none")]
+        public ActionResult Message(string groupName)
         {
-            return null;
+            var group = this.groups.GetAll()
+                .Where(x => x.Name.ToLower() == groupName.ToLower())
+                .Select(x => new GroupViewModel()
+                {
+                    Name = x.Name,
+                    Messages = x.Messages.Select(y => new MessageViewModel()
+                    {
+                        Author = y.Author,
+                        Content = y.Content
+                    }).ToList()
+                })
+                .SingleOrDefault();
+
+
+            return PartialView("Message", group);
         }
     }
 }

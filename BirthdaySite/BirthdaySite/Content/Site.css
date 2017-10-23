@@ -549,3 +549,11 @@ div.card.events-card{
 .gender{
     color: burlywood;
 }
+
+#Email{
+    width: 100%;
+}
+
+.form-group-change{
+    display: none;
+}

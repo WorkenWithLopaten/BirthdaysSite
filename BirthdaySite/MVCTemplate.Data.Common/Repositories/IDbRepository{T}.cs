@@ -1,22 +1,17 @@
-﻿using System.Linq;
+﻿using MVCTemplate.Data.Common.Models;
+using System.Linq;
 
 namespace MVCTemplate.Data.Common
 {
     public interface IDbRepository<T>
-        where T : class 
+        where T : class, IDeletableEntity 
     {
         IQueryable<T> All();
 
         IQueryable<T> AllWithDeleted();
 
-        T GetById(object id);
-
         void Add(T entity);
 
-        void Delete(T entity);
-
-        void HardDelete(T entity);
-
-        void Dispose();
+        void Update(T entity);
     }
 }

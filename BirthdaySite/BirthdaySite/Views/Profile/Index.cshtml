@@ -1,0 +1,17 @@
+﻿@model BirthdaySite.Models.ExternalLoginConfirmationViewModel
+
+@Html.DisplayFor(x => Model.Email)<br />
+<button class="btn-success">Edit Your Email!</button><br />
+@using (Html.BeginForm("ChangeProfile", "Profile", FormMethod.Post, new { @class = "form-group-change" }))
+{
+    @Html.EditorFor(x => Model.Email)
+    <input class="btn-danger" type="submit" value="Edit!" />
+}
+
+@section Scripts{
+    <script>
+        $('.btn-success').click(function () {
+            $(".form-group-change").toggle();
+        });
+    </script>
+}

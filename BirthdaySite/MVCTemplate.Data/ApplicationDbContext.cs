@@ -3,13 +3,12 @@ using System.Linq;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MVCTemplate.Data.Common.Models;
-using BirthdaySite.Data.Models;
 using MVCTemplate.Data.Models;
 
 namespace BirthdaySite.Models
 {
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<User>, IApplicationDbContext
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -22,7 +21,7 @@ namespace BirthdaySite.Models
 
         public IDbSet<Friend> Friends { get; set; }
 
-        public IDbSet<FriendsList> FriendsList { get; set; } 
+        public IDbSet<FriendsList> FriendsList { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -6,7 +6,7 @@ using MVCTemplate.Data.Common.Models;
 namespace MVCTemplate.Data.Common
 {
     public class DbRepository<T> : IDbRepository<T>
-       where T : BaseModel<int>
+       where T : class, IDeletableEntity
     {
         public DbRepository(DbContext context)
         {
@@ -33,36 +33,29 @@ namespace MVCTemplate.Data.Common
             return this.DbSet;
         }
 
-        public T GetById(object id)
-        {
-            var item = this.DbSet.Find(id);
-            if (item.IsDeleted)
-            {
-                return null;
-            }
-
-            return item;
-        }
-
         public void Add(T entity)
         {
-            this.DbSet.Add(entity);
+            var entry = this.Context.Entry(entity);
+
+            if (entry.State != EntityState.Detached)
+            {
+                entry.State = EntityState.Added;
+            }
+            else
+            {
+                this.Context.Set<T>().Add(entity);
+            }
         }
 
-        public void Delete(T entity)
+        public void Update(T entity)
         {
-            entity.IsDeleted = true;
-            entity.DeletedOn = DateTime.UtcNow;
-        }
+            var entry = this.Context.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                this.Context.Set<T>().Attach(entity);
+            }
 
-        public void HardDelete(T entity)
-        {
-            this.DbSet.Remove(entity);
-        }
-
-        public void Dispose()
-        {
-            this.Context.Dispose();
+            entry.State = EntityState.Modified;
         }
     }
 }

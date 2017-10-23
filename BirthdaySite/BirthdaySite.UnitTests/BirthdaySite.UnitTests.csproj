@@ -36,6 +36,15 @@
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
@@ -78,9 +87,20 @@
     <Reference Include="Moq, Version=4.7.142.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.7.142\lib\net45\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MvcRouteTester, Version=1.0.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcRouteTester.Mvc5.2.2.0.1\lib\net45\MvcRouteTester.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -89,8 +109,12 @@
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -100,6 +124,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -125,8 +152,13 @@
     <Reference Include="TestStack.FluentMVCTesting, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TestStack.FluentMVCTesting.3.0.0\lib\NET45\TestStack.FluentMVCTesting.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AdministrationArea.cs" />
+    <Compile Include="ControllerTests\AccountControllerTests\AccontControllerTests.cs" />
     <Compile Include="ControllerTests\AdministrationController\Constructor_Should.cs" />
     <Compile Include="ControllerTests\AdministrationController\GetAllFriendListsAndFriendsTests.cs" />
     <Compile Include="ControllerTests\AdministrationController\GetAllGroupsAndMessages.cs" />
@@ -134,10 +166,22 @@
     <Compile Include="ControllerTests\AdministrationController\IndexTests.cs" />
     <Compile Include="ControllerTests\BirthdayControllerTests\ConstructorTests.cs" />
     <Compile Include="ControllerTests\BirthdayControllerTests\IndexTests.cs" />
+    <Compile Include="ControllerTests\ErrorControllerTests\ErrorControllerTests.cs" />
     <Compile Include="ControllerTests\ForumController\ConstructorTests.cs" />
     <Compile Include="ControllerTests\ForumController\IndexTests.cs" />
+    <Compile Include="ControllerTests\ForumController\MessageTests.cs" />
     <Compile Include="ControllerTests\ForumController\RenderMessagesTests.cs" />
+    <Compile Include="ControllerTests\HomeControllerTests\HomeControllerTests.cs" />
+    <Compile Include="ControllerTests\PresentsControllerTests\PresentsControllerTests.cs" />
+    <Compile Include="ControllerTests\ProfileControllerTests\ProfileControllerTests.cs" />
+    <Compile Include="Data\DbRepositoryTests.cs" />
+    <Compile Include="Data\SaveContextTests.cs" />
+    <Compile Include="ModelTests\FriendListTests.cs" />
+    <Compile Include="ModelTests\FriendTests.cs" />
+    <Compile Include="ModelTests\GroupTests.cs" />
+    <Compile Include="ModelTests\UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteTests\RouteConfigTests.cs" />
     <Compile Include="ServiceTests\FriendListsTests\Constructor_Should.cs" />
     <Compile Include="ServiceTests\FriendListsTests\GetAllFriendsTests.cs" />
     <Compile Include="ServiceTests\FriendListsTests\GetAllTests.cs" />
@@ -146,6 +190,7 @@
     <Compile Include="ServiceTests\GroupServiceTests\GetAllTests.cs" />
     <Compile Include="ServiceTests\UserServiceTests\ConstructorTests.cs" />
     <Compile Include="ServiceTests\UserServiceTests\GetAllTests.cs" />
+    <Compile Include="ServiceTests\UserServiceTests\UpdateTests.cs" />
     <Compile Include="SignalRTests\Constructor_Should.cs" />
     <Compile Include="SignalRTests\Helpers\TestableChatHub.cs" />
   </ItemGroup>
@@ -166,6 +211,10 @@
       <Project>{A7BC30AB-F428-4A40-8B42-71AB0F3B70B0}</Project>
       <Name>MVCTemplate.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVCTemplate.Data\MVCTemplate.Data.csproj">
+      <Project>{F44DB7D8-A6D2-484B-99A9-E507A619218E}</Project>
+      <Name>MVCTemplate.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVCTemplate.Services.Data\MVCTemplate.Services.Data.csproj">
       <Project>{EBCF91B7-015C-40D5-8557-5D6B319E96B6}</Project>
       <Name>MVCTemplate.Services.Data</Name>
@@ -181,6 +230,7 @@
     <Content Include="Scripts\jquery.signalR-2.2.2.js" />
     <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,0 +1,20 @@
+﻿@model BirthdaySite.ViewModels.Forum.GroupViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">@Model.Name`s group</div>
+            <div class="panel-body">
+                <div class="container">
+                    @foreach (var message in Model.Messages)
+                    {
+                        <div class="row message-bubble">
+                            <p class="text-muted">@message.Author</p>
+                            <span>@message.Content</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

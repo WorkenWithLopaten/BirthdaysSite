@@ -1,4 +1,5 @@
-﻿using BirthdaySite.Models;
+﻿using BirthdaySite.Common;
+using BirthdaySite.Models;
 using BirthdaySite.ViewModels.AdminViewModel;
 using BirthdaySite.ViewModels.Forum;
 using BirthdaySite.ViewModels.Friends;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace BirthdaySite.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         private IGroupService groups;
@@ -27,7 +29,7 @@ namespace BirthdaySite.Areas.Administration.Controllers
             this.users = users;
         }
 
-        [Authorize]
+        [OutputCacheCustom]
         public ActionResult Index()
         {
             var groups = this.groups.GetAll().ToList();
@@ -59,7 +61,6 @@ namespace BirthdaySite.Areas.Administration.Controllers
             return View(adminViewModel);
         }
 
-        [Authorize]
         public ActionResult GetAllGroupsAndMessages()
         {
             var groups = this.groups.GetAll()
@@ -78,7 +79,6 @@ namespace BirthdaySite.Areas.Administration.Controllers
             return View(groups);
         }
 
-        [Authorize]
         public ActionResult GetAllFriendListsAndFriends()
         {
             var friendLists = this.friendLists.GetAll()
@@ -98,7 +98,6 @@ namespace BirthdaySite.Areas.Administration.Controllers
             return View(friendLists);
         }
 
-        [Authorize]
         public ActionResult GetAllUsers()
         {
             var users = this.users.GetAll()

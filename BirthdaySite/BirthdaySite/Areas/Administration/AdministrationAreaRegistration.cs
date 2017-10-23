@@ -16,7 +16,7 @@ namespace BirthdaySite.Areas.Administration
         {
             context.MapRoute(
                 "Administration_default",
-                "Administration/{controller}/{action}/{id}",
+                "Administration/{controller}/{action}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

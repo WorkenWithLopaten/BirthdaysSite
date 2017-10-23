@@ -9,7 +9,7 @@ namespace MVCTemplate.Data.Common.Models
         [Key]
         public TKey Id { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
 
